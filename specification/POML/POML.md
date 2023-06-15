@@ -451,9 +451,12 @@ None
 
 ### Attributes
 
-| name               | type         | default value | example                | description                        |
-| ------------------ | ------------ | ------------- | ---------------------- | ---------------------------------- |
-| latitude           | `number`     | `"0"`         | `"35.68122469808435"`  | Latitude                           |
-| longitude          | `number`     | `"0"`         | `"139.76719554151146"` | Longitude                          |
-| ellipsoidal-height | `number`     | `"0"`         | `"50"`                 | Ellipsoidal height                 |
-| enu-rotation       | `Quaternion` | `"0,0,0,1"`   | `"0,0,0,1"`            | Rotation in ENU coordinates system |
+| name               | type         | default value | example                | description                                                 |
+| ------------------ | ------------ | ------------- | ---------------------- | ----------------------------------------------------------- |
+| latitude           | `number`     | `"0"`         | `"35.68122469808435"`  | Latitude                                                    |
+| longitude          | `number`     | `"0"`         | `"139.76719554151146"` | Longitude                                                   |
+| ellipsoidal-height | `number`     | `"0"`         | `"50"`                 | Ellipsoidal height                                          |
+| enu-rotation       | `Quaternion` | `"0,0,0,1"`   | `"0,0,0,1"`            | Rotation in North (+X) West (+Y) Up (+Z) coordinates system |
+
+The enu-rotation, named for ENU (East, North, Up), actually operates on a different axis order (North, West, Up).
+Because this discrepancy leads to confusion, enu-rotation will be obsolete in the future.
