@@ -290,13 +290,18 @@ PomlElement は階層構造を作ることができ、`position` や `rotation` 
 
 ### アトリビュート
 
-| name     | type     | default value | example                            | description |
-| -------- | -------- | ------------- | ---------------------------------- | ----------- |
-| src      | `string` | `""`          | `"https://example.com/sample.png"` | ソース URL  |
-| filename | `string` | `""`          | `"sample.png"`                     | ファイル名  |
+| name     | type     | default value | example                            | description      |
+| -------- | -------- | ------------- | ---------------------------------- | ---------------- |
+| src      | `string` | `""`          | `"https://example.com/sample.png"` | ソース URL       |
+| filename | `string` | `""`          | `"sample.png"`                     | ファイル名       |
+| width    | `number` | `undefined`   | `"1"`, `"0.1"`                     | 画像表示幅 [m]   |
+| height   | `number` | `undefined`   | `"1"`, `"0.1"`                     | 画像表示高さ [m] |
 
 ファイル名が指定されている場合、ファイル名の拡張子で画像ファイルのフォーマットが判別される。  
 ファイル名が指定されていない場合、URL の拡張子が利用される。
+
+`width` または `height` の片方が指定されていない場合、指定されていない数値は画像のアスペクト比から計算される。  
+`width` と `height` が両方指定されていない場合、`width` が 1m として表示される。
 
 ### サポートされる拡張子
 
@@ -328,13 +333,18 @@ PomlElement は階層構造を作ることができ、`position` や `rotation` 
 
 ### アトリビュート
 
-| name     | type     | default value | example                            | description |
-| -------- | -------- | ------------- | ---------------------------------- | ----------- |
-| src      | `string` | `""`          | `"https://example.com/sample.mp4"` | ソース URL  |
-| filename | `string` | `""`          | `"sample.mp4"`                     | ファイル名  |
+| name     | type     | default value | example                            | description      |
+| -------- | -------- | ------------- | ---------------------------------- | ---------------- |
+| src      | `string` | `""`          | `"https://example.com/sample.mp4"` | ソース URL       |
+| filename | `string` | `""`          | `"sample.mp4"`                     | ファイル名       |
+| width    | `number` | `undefined`   | `"1"`, `"0.1"`                     | 動画表示幅 [m]   |
+| height   | `number` | `undefined`   | `"1"`, `"0.1"`                     | 動画表示高さ [m] |
 
 ファイル名が指定されている場合、ファイル名の拡張子で動画ファイルのフォーマットが判別される。  
 ファイル名が指定されていない場合、URL の拡張子が利用される。
+
+`width` または `height` の片方が指定されていない場合、指定されていない数値は画像のアスペクト比から計算される。  
+`width` と `height` が両方指定されていない場合、`width` が 1m として表示される。
 
 ### サポートされる拡張子
 
