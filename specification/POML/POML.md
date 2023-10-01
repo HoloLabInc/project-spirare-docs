@@ -291,13 +291,18 @@ A PomlElement representing an image.
 
 ### Attributes
 
-| name     | type     | default value | example                            | description |
-| -------- | -------- | ------------- | ---------------------------------- | ----------- |
-| src      | `string` | `""`          | `"https://example.com/sample.png"` | Source URL  |
-| filename | `string` | `""`          | `"sample.png"`                     | Filename    |
+| name     | type     | default value | example                            | description        |
+| -------- | -------- | ------------- | ---------------------------------- | ------------------ |
+| src      | `string` | `""`          | `"https://example.com/sample.png"` | Source URL         |
+| filename | `string` | `""`          | `"sample.png"`                     | Filename           |
+| width    | `number` | `undefined`   | `"1"`, `"0.1"`                     | Display width [m]  |
+| height   | `number` | `undefined`   | `"1"`, `"0.1"`                     | Display height [m] |
 
-If a filename is specified, the image file format is determined by the extension of the filename.  
+If a filename is specified, the image file format is determined by the extension of the filename.
 If a filename is not specified, the extension of the URL is used.
+
+If either `width` or `height` is not specified, the unspecified value will be calculated from the image's aspect ratio.
+If neither `width` nor `height` is specified, the `width` defaults to 1m.
 
 ### Supported Extensions
 
@@ -329,13 +334,18 @@ A PomlElement representing an video.
 
 ### Attributes
 
-| name     | type     | default value | example                            | description |
-| -------- | -------- | ------------- | ---------------------------------- | ----------- |
-| src      | `string` | `""`          | `"https://example.com/sample.mp4"` | Source URL  |
-| filename | `string` | `""`          | `"sample.mp4"`                     | Filename    |
+| name     | type     | default value | example                            | description        |
+| -------- | -------- | ------------- | ---------------------------------- | ------------------ |
+| src      | `string` | `""`          | `"https://example.com/sample.mp4"` | Source URL         |
+| filename | `string` | `""`          | `"sample.mp4"`                     | Filename           |
+| width    | `number` | `undefined`   | `"1"`, `"0.1"`                     | Display width [m]  |
+| height   | `number` | `undefined`   | `"1"`, `"0.1"`                     | Display height [m] |
 
-If a filename is specified, the video file format is determined by the extension of the filename.  
+If a filename is specified, the video file format is determined by the extension of the filename.
 If a filename is not specified, the extension of the URL is used.
+
+If either `width` or `height` is not specified, the unspecified value will be calculated from the video's aspect ratio.
+If neither `width` nor `height` is specified, the `width` defaults to 1m.
 
 ### Supported Extensions
 
