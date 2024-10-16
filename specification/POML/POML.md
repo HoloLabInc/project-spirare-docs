@@ -153,26 +153,26 @@ PomlElement can form a hierarchical structure, and position and rotation are rel
 
 ### Common Attributes
 
-| name              | type                    | default value       | example                 | description                                                                        |
-| ----------------- | ----------------------- | ------------------- | ----------------------- | ---------------------------------------------------------------------------------- |
-| position          | `Vector3`               | `"0,0,0"`           | `"10,20,30"`            | Relative position to the parent element                                            |
-| scale             | `number` or `Vector3`   | `"1"`               | `"1"`, `"10,20,30"`     | Relative scale to the parent element                                               |
-| rotation          | `Quaternion`            | `"0,0,0,1"`         | `"0,0,0,1"`             | Relative rotation to the parent element                                            |
-| scale-by-distance | `boolean`               | `"false"`           | `"true"`                | Whether to scale the size according to the distance from the camera when displayed |
-| min-scale         | `number` or `Vector3`   |                     | `"1"`, `"10,20,30"`     | Minimum magnification by scale-by-distance <br>(no minimum if not specified)       |
-| max-scale         | `number` or `Vector3`   |                     | `"1"`, `"10,20,30"`     | Maximum magnification by scale-by-distance <br>(no maximum if not specified)       |
-| rotation-mode     | `string` (RotationMode) |                     | `"billboard"`           | Rotation mode <br>(no rotation if not specified)                                   |
-| display           | `string` (Display)      | `"visible"`         | `"visible"`             | Display mode                                                                       |
-| ar-display        | `string` (ArDisplay)    | `"same-as-display"` | `"visible"`             | Display mode during AR                                                             |
-| web-link          | `string`                |                     | `"https://example.com"` | Link associated with PomlElement <br>(corresponds to href in <a> in HTML)          |
+| name              | type                    | default value       | example                                  | description                                                                        |
+| ----------------- | ----------------------- | ------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------- |
+| position          | `Vector3`               | `"0 0 0"`           | `"10 20 30"`, `"10,20,30"`               | Relative position to the parent element                                            |
+| scale             | `number` or `Vector3`   | `"1"`               | `"1"`,`"10 20 30"`, `"10,20,30"`         | Relative scale to the parent element                                               |
+| rotation          | `Quaternion`            | `"0 0 0 1"`         | `"0 0 0.707 0.707"`, `"0,0,0.707,0.707"` | Relative rotation to the parent element                                            |
+| scale-by-distance | `boolean`               | `"false"`           | `"true"`                                 | Whether to scale the size according to the distance from the camera when displayed |
+| min-scale         | `number` or `Vector3`   |                     | `"1"`, `"10 20 30"`                      | Minimum magnification by scale-by-distance <br>(no minimum if not specified)       |
+| max-scale         | `number` or `Vector3`   |                     | `"1"`, `"10 20 30"`                      | Maximum magnification by scale-by-distance <br>(no maximum if not specified)       |
+| rotation-mode     | `string` (RotationMode) |                     | `"billboard"`                            | Rotation mode <br>(no rotation if not specified)                                   |
+| display           | `string` (Display)      | `"visible"`         | `"visible"`                              | Display mode                                                                       |
+| ar-display        | `string` (ArDisplay)    | `"same-as-display"` | `"visible"`                              | Display mode during AR                                                             |
+| web-link          | `string`                |                     | `"https://example.com"`                  | Link associated with PomlElement <br>(corresponds to href in <a> in HTML)          |
 
 - Vector3  
   Consists of three values, x, y, and z.  
-  In POML, the text representation is comma-separated (`"1,1,1"`) or space-separated (`"1 1 1"`)
+  In POML, the text representation is space-separated (`"1 1 1"`) or comma-separated (`"1,1,1"`)
 
 - Quaternion  
   Consists of four values, x, y, z, and w.  
-  In POML, the text representation is comma-separated (`"0,0,0,1"`) or space-separated (`"0 0 0 1"`)
+  In POML, the text representation is space-separated (`"0 0 0 1"`) or comma-separated (`"0,0,0,1"`)
 
 - RotationMode
 
@@ -194,15 +194,15 @@ PomlElement can form a hierarchical structure, and position and rotation are rel
 #### Attribute Usage Examples
 
 ```xml
-<element position="10,20,30"
+<element position="10 20 30"
          scale="2">
 </element>
 ```
 
 ```xml
-<element position="0.0,0.0,1.1"
-         scale="1,2,3"
-         rotation="0,0,0,1"
+<element position="0.0 0.0 1.1"
+         scale="1 2 3"
+         rotation="0 0 0 1"
          scale-by-distance="true"
          min-scale="1"
          max-scale="3"
@@ -414,20 +414,20 @@ None
 <element>
   <space-reference space-id="12345"
                    space-type="Immersal"
-                   position="1,2,3"
-                   rotation="0,0,0,1">
+                   position="1 2 3"
+                   rotation="0 0 0 1">
   </space-reference>
 </element>
 ```
 
 ### Attributes
 
-| name       | type         | default value | example                             | description                                                                          |
-| ---------- | ------------ | ------------- | ----------------------------------- | ------------------------------------------------------------------------------------ |
-| space-id   | `string`     | `""`          | `"12345"`, `"MapA"`                 | Space ID                                                                             |
-| space-type | `string`     | `""`          | `"Immersal"`, `"VuforiaAreaTarget"` | Space type                                                                           |
-| position   | `Vector3`    | `"0,0,0"`     | `"1,2,3"`                           | Relative position of the spatial origin from the parent element of `space-reference` |
-| rotation   | `Quaternion` | `"0,0,0,1"`   | `"0,0,0,1"`                         | Relative rotation of the spatial origin from the parent element of `space-reference` |
+| name       | type         | default value | example                                  | description                                                                          |
+| ---------- | ------------ | ------------- | ---------------------------------------- | ------------------------------------------------------------------------------------ |
+| space-id   | `string`     | `""`          | `"12345"`, `"MapA"`                      | Space ID                                                                             |
+| space-type | `string`     | `""`          | `"Immersal"`, `"VuforiaAreaTarget"`      | Space type                                                                           |
+| position   | `Vector3`    | `"0 0 0"`     | `"1 2 3"`, `"1,2,3"`                     | Relative position of the spatial origin from the parent element of `space-reference` |
+| rotation   | `Quaternion` | `"0 0 0 1"`   | `"0 0 0.707 0.707"`, `"0,0,0.707,0.707"` | Relative rotation of the spatial origin from the parent element of `space-reference` |
 
 If space-type is not specified, the association will be made with spaces that have a matching space-id, regardless of their space type.
 
@@ -459,12 +459,12 @@ None
 
 ### Attributes
 
-| name               | type         | default value | example                | description                                                 |
-| ------------------ | ------------ | ------------- | ---------------------- | ----------------------------------------------------------- |
-| latitude           | `number`     | `"0"`         | `"35.68122469808435"`  | Latitude                                                    |
-| longitude          | `number`     | `"0"`         | `"139.76719554151146"` | Longitude                                                   |
-| ellipsoidal-height | `number`     | `"0"`         | `"50"`                 | Ellipsoidal height                                          |
-| enu-rotation       | `Quaternion` | `"0,0,0,1"`   | `"0,0,0,1"`            | Rotation in North (+X) West (+Y) Up (+Z) coordinates system |
+| name               | type         | default value | example                                  | description                                                 |
+| ------------------ | ------------ | ------------- | ---------------------------------------- | ----------------------------------------------------------- |
+| latitude           | `number`     | `"0"`         | `"35.68122469808435"`                    | Latitude                                                    |
+| longitude          | `number`     | `"0"`         | `"139.76719554151146"`                   | Longitude                                                   |
+| ellipsoidal-height | `number`     | `"0"`         | `"50"`                                   | Ellipsoidal height                                          |
+| enu-rotation       | `Quaternion` | `"0 0 0 1"`   | `"0 0 0.707 0.707"`, `"0,0,0.707,0.707"` | Rotation in North (+X) West (+Y) Up (+Z) coordinates system |
 
 The enu-rotation, named for ENU (East, North, Up), actually operates on a different axis order (North, West, Up).
 Because this discrepancy leads to confusion, enu-rotation will be obsolete in the future.
