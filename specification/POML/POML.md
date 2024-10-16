@@ -21,11 +21,10 @@ Example of geodetic placement
 ```xml
 <poml>
   <scene>
-    <model src="./model.glb">
+    <model src="./model.glb" rotation="0 0 0.7071 0.7071">
       <geo-reference latitude="35.68122469808435"
                      longitude="139.76719554151146"
-                     ellipsoidal-height="50"
-                     enu-rotation="0,0,0,1">
+                     ellipsoidal-height="50">
       </geo-reference>
     </model>
   </scene>
@@ -450,11 +449,10 @@ None
 ### Example
 
 ```xml
-<model src="./model.glb">
+<model src="./model.glb" rotation="0 0 0.7071 0.7071">
   <geo-reference latitude="35.68122469808435"
                  longitude="139.76719554151146"
-                 ellipsoidal-height="50"
-                 enu-rotation="0,0,0,1">
+                 ellipsoidal-height="50">
   </geo-reference>
 </model>
 ```
@@ -470,3 +468,4 @@ None
 
 The enu-rotation, named for ENU (East, North, Up), actually operates on a different axis order (North, West, Up).
 Because this discrepancy leads to confusion, enu-rotation will be obsolete in the future.
+Please use the rotation attribute of the parent element instead.

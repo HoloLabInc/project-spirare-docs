@@ -21,11 +21,10 @@ POML 内で指定する座標・回転・スケールなどの座標系は全て
 ```xml
 <poml>
   <scene>
-    <model src="./model.glb">
+    <model src="./model.glb" rotation="0 0 0.7071 0.7071">
       <geo-reference latitude="35.68122469808435"
                      longitude="139.76719554151146"
-                     ellipsoidal-height="50"
-                     enu-rotation="0,0,0,1">
+                     ellipsoidal-height="50">
       </geo-reference>
     </model>
   </scene>
@@ -449,11 +448,10 @@ space-type を指定しない場合、空間タイプによらず space-id が�
 ### 例
 
 ```xml
-<model src="./model.glb">
+<model src="./model.glb" rotation="0 0 0.7071 0.7071">
   <geo-reference latitude="35.68122469808435"
                  longitude="139.76719554151146"
-                 ellipsoidal-height="50"
-                 enu-rotation="0,0,0,1">
+                 ellipsoidal-height="50">
   </geo-reference>
 </model>
 ```
@@ -467,4 +465,5 @@ space-type を指定しない場合、空間タイプによらず space-id が�
 | ellipsoidal-height | `number`     | `"0"`         | `"50"`                 | 楕円体高                                    |
 | enu-rotation       | `Quaternion` | `"0,0,0,1"`   | `"0,0,0,1"`            | North (+X) West (+Y) Up (+Z) 座標系での回転 |
 
-enu-rotation は ENU (East, North, Up) という名前と実際の回転軸（North, West, Up）が異なっており混乱を招くため、将来的に廃止する予定です
+enu-rotation は ENU (East, North, Up) という名前と実際の回転軸（North, West, Up）が異なっており混乱を招くため、将来的に廃止する予定です。  
+代わりに、親タグの rotation アトリビュートを使用してください。
